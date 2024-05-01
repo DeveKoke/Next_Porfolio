@@ -1,0 +1,29 @@
+.nameTitle{
+    margin: 8px 0;
+    color: #32efef;
+    letter-spacing: 4px;
+    cursor: pointer;
+} 
+.navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 23em;
+}
+.ul_navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+}
+/* .ul_navbar li{
+    color: #32efef;
+    font-family: 'RocknRoll One';
+}
+.ul_navbar li:hover{
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'RocknRoll One';
+} 
+ */
