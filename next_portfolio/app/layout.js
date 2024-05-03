@@ -1,9 +1,7 @@
 import React from 'react';
 import { Inter } from "next/font/google";
 import styles from "./styles/globals.module.css";
-
-
-
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={styles.body}>
+      <body className={`${inter.className} ${styles.body}`}>
         <header className={styles.header}>
             <nav className={styles.navbar}>
-            <h1 className={styles.nameTitle}><a className={styles.a} href="/applications/Cover">JORGE</a></h1>
+            <h1 className={styles.nameTitle}><a className={styles.a} href="/">JORGE</a></h1>
             <ul className={`${styles.ul} ${styles.ul_navbar}`} style={{ listStyle: 'none' }}>
-                <li className={styles.li}><a className={styles.a} href="/applications/AboutMe">Sobre mí</a></li>
+                <li className={styles.li}><a className={styles.a} href="/applications/Interests">Intereses</a></li>
                 <li className={styles.li}><a className={styles.a} href="/applications/Skills">Skills</a></li>
                 <li className={styles.li}><a className={styles.a} href="/applications/Proyects">Proyectos</a></li>
                 <li className={styles.li}><a className={styles.a} href="/applications/Contact">Contacto</a></li>
@@ -28,44 +26,46 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         <main>
-            <section className={styles.frontWrapper} >
+            <article className={styles.frontWrapper} >
                 <div className={styles.frontContent}>
-                    <img src="assets/Yo_portada.jpg" alt="fotografía de portada de Jorge" className={styles.imgFront} id='portada' />
+                    <Image className={styles.imgFront} width={200} height={260} src="/assets/Yo_portada.jpg" alt="fotografía de portada de Jorge"  id='portada' />
                     <h1>JORGE BLAS ESPEJO</h1>
-                    <h3 className={styles.h3Front}>Full Stack Developer</h3>
+                    <h3 className={styles.h3Front}>Frontend Developer</h3>
                 </div>
                 <div className={styles.socialIcons}>
                     <a target='_blank' href="https://www.instagram.com/jrg.bles/">
-                      <img src="assets/instagram.png" alt="instagram" />
+                      <Image width={100} height={28} src="/assets/instagram.png" alt="instagram" />
                     </a>
                     <a target='_blank' href="https://github.com/DeveKoke">
-                      <img src="assets/resource.png" alt="github" />
+                      <Image width={10} height={28} src="/assets/resource.png" alt="github" />
                     </a>
                     <a target='_blank' href="https://www.linkedin.com/in/jorge-blas-espejo-webappdeveloper">
-                      <img src="assets/linkedin.png" alt="linkedin" />
+                      <Image width={10} height={28} src="/assets/linkedin.png" alt="linkedin" />
                     </a>
                 </div>
-            <a className={styles.a} href="public/CV_JBE.pdf" download="Jorge_Blas_Espejo_CV">
+            <a className={styles.a} href="/CV_JBE.pdf" target='_blank' download="Jorge_Blas_Espejo_CV.pdf">
                 <button className={`${styles.buttonDW} ${styles.buttonDWMG}`} type="button">
                 <span className={styles.buttonDW_text} >DESCARGAR CV</span>
-                <span className={styles.buttonDW_icon} ><img className={styles.svg} src="assets/downloads.png" alt="descargar curriculum"/><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></span>
+                <span className={styles.buttonDW_icon} ><Image className={styles.svg} width={10} height={20} src="/assets/downloads.png" alt="descargar curriculum"/><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></span>
                 </button></a>
-            </section>
+            </article>
+            {children}
         </main>
         <footer className={styles.footer}>
           <div>
             <a className={styles.a} target='_blank' href="https://www.instagram.com/jrg.bles/">
-              <img className={styles.img} src="assets/instagram.png" alt="instagram" />
+              <Image className={styles.img} width={30} height={30} src="/assets/instagram.png" alt="instagram" />
             </a>
             <a className={styles.a} target='_blank' href="https://github.com/DeveKoke">
-              <img className={styles.img} src="assets/resource.png" alt="github" />
+              <Image className={styles.img} width={30} height={30} src="/assets/resource.png" alt="github" />
             </a>
             <a className={styles.a} target='_blank' href="https://www.linkedin.com/in/jorge-blas-espejo-webappdeveloper">
-              <img className={styles.img} src="assets/linkedin.png" alt="linkedin" />
+              <Image className={styles.img} width={30} height={30} src="/assets/linkedin.png" alt="linkedin" />
             </a>
           </div>
           <p className={styles.p}>Jorge Blas Espejo Portfolio 2023</p>
-        </footer>      </body>
+        </footer>      
+      </body>
     </html>
   );
 }

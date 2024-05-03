@@ -23,6 +23,7 @@
   font-size: 1em;
 }
 .p{
+  text-indent: 1em;
   font-weight: 300;
   width: 90%;
   margin: .8em auto 1em;
@@ -56,6 +57,9 @@
 .ul{
   padding: 0;
 }
+.li{
+  list-style: none;
+}
 
 .p .a:visited, .li .a:visited{
   text-decoration: none;
@@ -63,7 +67,7 @@
 }
 
 
-/* FOOTER STYLES */
+/* FOOTER STYLES */  
 .footer{
   background-color: rgb(4, 50, 56);
   min-height: 5em;
@@ -88,7 +92,7 @@
 
 
 
-/* COVER CSS */
+/* PORTADA CSS */ 
 
 .frontWrapper{
   display: flex;
@@ -96,12 +100,13 @@
   align-items: center;
   padding-top: 0em;
   margin-top: 3.8em; 
-  background: linear-gradient(180deg, rgb(6, 85, 97) 0%, rgba(24, 114, 93, 0.8) 100%),
-  url('/public/assets/compute.jpg') no-repeat center center fixed;
+  background: linear-gradient(180deg, rgb(6, 85, 97) 20%, rgba(24, 114, 93, 0.8) 80%),
+  url('/assets/compute.jpg') no-repeat  center center fixed;
   background-blend-mode: normal;
   height: 36em;
   background-size: 80em;  
-  background-position-x: -12em;  
+  background-position-x: 0em;  
+  background-size: cover;
 }
 .frontContent{
   display: flex;
@@ -111,10 +116,10 @@
   background-color:rgb(6, 85, 97) ;
   padding: 2em 1em 0;           /**  Modificar media query para pantallas grandes a 3.5em lateral */
   color: #ffffff;
-  max-height: 25.5em;      
+  max-height: 25.5em;  
+  width: 22em;    
 }
 .imgFront{
-  width: 30%;
   border-radius: 250px;
   width: 90%;
   border: solid #32efef 5px ;
@@ -127,7 +132,7 @@
 
 
 
-/* *   --------------------   BOTÓN DESCARGAR  --------------------- */
+/* BOTÓN DESCARGAR */   
 .buttonDW {
   position: relative;
   width: 180px;
@@ -198,6 +203,9 @@
 .socialIcons{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 12em;
+  height: 2em;
   margin-top: 1.5em;
 }
 .socialIcons img{
@@ -207,7 +215,7 @@
 }
 
 
-/* HEADER CSS */
+/* HEADER CSS */   
 .nameTitle{
   margin: 8px 0;
   color: #32efef;
@@ -227,3 +235,106 @@
   justify-content: space-between;
   width: 40%;
 }
+
+
+/*  ABOUT ME  */ 
+
+.aboutWrapper{
+  margin-top: 0;
+  background-color: rgb(4, 50, 56);
+  color: #ffffff;
+  padding: 25px 15%;
+  line-height: 30px;
+
+}
+.aboutContainer{
+  margin:.7em 0 1em;
+}
+.h1About{
+  margin-top: 0;
+  padding-bottom: 20px;
+}
+.links{
+  color: rgb(184, 251, 251);
+}
+.links:visited{
+  color: rgb(180, 252, 252);
+}
+
+/* INTERESTS COMPONENT */  
+.interestsContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  justify-content: space-evenly ;
+  /* margin-left: -2.8em; */
+}
+.interestIcon{
+  width: 3.6em;
+  padding: 10px;
+  border: solid white 2px;
+  border-radius: 10px;
+  transition: all 0.2s;
+  z-index: 900;
+}
+.interestIcon:hover{
+  background-color: rgb(10, 94, 107);
+  cursor: pointer;
+  padding: 4px;
+  width: 4.35em;
+  height: 4.35em;
+}
+.h3-int{
+width: 90%;
+margin: 15px auto;
+}
+.interestCard{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 67%;
+  margin: 10px auto 0;
+  background-color: rgb(6, 85, 97);
+  padding: 13px 8px;
+  border-radius: 10px;
+}
+.interestContent{
+display: flex;
+flex-direction: column;
+}
+.interestContent h3{
+text-align: center;
+}
+/** ANIMACION DE  ENTRADA DE CARD */
+.scale-in-ver-center {
+animation: scale-in-ver-center 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+/* * ANIMACIÓN DE SALIDA DE CARD  */
+.scale-out-vertical {
+animation: scale-out-vertical 0.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+}
+
+/* * ANIMACIÓN DE ENTRADA DE ICONOS */
+.scale-in-icon{
+  animation: scale-in-center 0.4s ease-in both;
+}
+.cardArrow{
+  width: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.cardText{
+  margin: 0;
+  font-size: .9em;
+  margin: .7em 1em .7em .5em;
+}
+
+.animate-icons {
+  animation: scaleInIcons .8s forwards;
+}
+
+
+
+
